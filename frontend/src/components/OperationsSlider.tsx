@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Truck, Monitor, Package, Upload, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Truck, Package, Upload, ChevronLeft, ChevronRight } from 'lucide-react';
 
 interface Slide {
     id: number;

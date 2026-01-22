@@ -302,7 +302,7 @@ const Footer: React.FC<{ theme: string }> = ({ theme }) => {
 };
 
 const Layout: React.FC = () => {
-    const [theme, setTheme] = useState(localStorage.getItem('theme') || 'dark');
+    const [theme, _setTheme] = useState(localStorage.getItem('theme') || 'dark');
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     useEffect(() => {

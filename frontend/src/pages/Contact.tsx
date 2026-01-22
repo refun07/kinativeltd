@@ -99,7 +99,7 @@ const Contact: React.FC = () => {
                                     <h3 className="text-2xl font-heading font-bold mb-2">Call Us</h3>
                                     <p className="text-foreground/60 group-hover:text-foreground transition-colors">{contactInfo.content.phone}</p>
                                     <p className="text-foreground/60 group-hover:text-foreground transition-colors">+88 01343882700</p>
-                                    <p className="text-foreground/40 text-sm mt-1">Mon-Fri, 9am-6pm EST</p>
+                                    <p className="text-foreground/40 text-sm mt-1">Sat-Thu, 10am-7pm (GMT+6)</p>
                                 </div>
                             </div>
                             <div className="flex items-start space-x-8 group">

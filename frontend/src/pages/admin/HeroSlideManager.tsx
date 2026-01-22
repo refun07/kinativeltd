@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Plus, Edit2, Trash2, Save, X, Upload, ArrowUp, ArrowDown } from 'lucide-react';
+import { Plus, Edit2, Trash2, Save, X, Upload } from 'lucide-react';
 import api from '../../services/api';
 
 interface HeroSlide {
@@ -47,50 +47,6 @@ const HeroSlideManager: React.FC = () => {
             setError('Failed to fetch slides');
         } finally {
             setLoading(false);
-        }
-    };
-
-    const handleCreate = async () => {
-        try {
-            if (!formData.background_image) {
-                setError('Background image is required');
-                return;
-            }
-            // For creating, we send the fields. Image is handled via separate upload or if backend supports base64/url
-            // The current backend controller expects 'background_image' as file for upload or string path?
-            // Let's check the controller. It expects 'background_image' to be a file in the request if it's an upload.
-            // But here `formData.background_image` might be a URL string if we used the upload endpoint first.
-            // Actually, my `handleImageUpload` uploads to `/admin/upload` and gets a URL.
-            // But the `HeroSlideController` store method expects `background_image` to be a FILE for upload.
-            // OR it should accept a string path if specifically handled.
-            // Let's look at `HeroSlideController`.
-            // It says: `if ($request->hasFile('background_image')) { ... store ... }`
-            // It validates `background_image` as `nullable|image|max:5120`. 
-            // This means it ONLY accepts a file upload directly in the specific store/update endpoint, 
-            // OR we need to modify it to accept a string path if pre-uploaded.
-            // The `PageContentManager` used `/admin/upload` generic endpoint.
-            // To keep it simple and consistent with `PageContentManager`, I should probably adjust the formData construction 
-            // to send a FILE object if it's a new upload, or handle it via FormData.
-
-            // Let's change the approach to use FormData for the submit
-            const data = new FormData();
-            Object.keys(formData).forEach(key => {
-                if (key === 'background_image') {
-                    // If it's a file object (we'll store file in a temp state), append it
-                    // But here formData.background_image is string.
-                    // Let's use a separate file state.
-                } else {
-                    data.append(key, (formData as any)[key]);
-                }
-            });
-            // This is getting complicated with types.
-            // Let's stick to the pattern: Upload image first -> get URL? 
-            // No, `HeroSlideController` logic:
-            // $request->validate([ 'background_image' => 'nullable|image|max:5120' ]);
-            // This forces it to be an image file.
-            // So I MUST send 'multipart/form-data'.
-        } catch (err: any) {
-            setError(err.response?.data?.message || 'Failed to create slide');
         }
     };
 

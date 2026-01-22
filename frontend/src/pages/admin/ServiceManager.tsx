@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Plus, Edit2, Trash2, Save, X, Upload } from 'lucide-react';
+import { Plus, Edit2, Trash2, Save, X } from 'lucide-react';
 import api from '../../services/api';
 
 interface Service {
@@ -29,7 +29,7 @@ const ServiceManager: React.FC = () => {
         order: 0,
         is_active: true,
     });
-    const [error, setError] = useState<string | null>(null);
+    const [, setError] = useState<string | null>(null);
 
     // Image handling
     const [iconFile, setIconFile] = useState<File | null>(null);

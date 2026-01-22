@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { MessageSquare, Tag, ShoppingCart, ChevronLeft, ChevronRight, Zap } from 'lucide-react';
+import { MessageSquare, Tag, ChevronLeft, ChevronRight, Zap } from 'lucide-react';
 
 interface Slide {
     id: number;

@@ -441,12 +441,12 @@ const BrandsSection: React.FC = () => {
                     { name: "SadeeqAgro", logo: "/images/clients/sadeeq.png" },
                     { name: "UNIQUE", logo: "/images/clients/unique.png" },
                     { name: "WAC", logo: "/images/clients/wac.png" },
-                    { name: "AFTAB", logo: "/images/clients/aftab.png" },
-                    { name: "BUET", logo: "/images/clients/buet.png" },
-                    { name: "WALTON", logo: "/images/clients/walton.png" },
-                    { name: "SadeeqAgro", logo: "/images/clients/sadeeq.png" },
-                    { name: "UNIQUE", logo: "/images/clients/unique.png" },
-                    { name: "WAC", logo: "/images/clients/wac.png" },
+                    { name: "FANCY", logo: "/images/clients/fancy.png" },
+                    { name: "LIRA", logo: "/images/clients/lira.png" },
+                    { name: "MONON", logo: "/images/clients/monon.png" },
+                    { name: "NEXTGEN", logo: "/images/clients/nextgen.png" },
+                    { name: "PAKIZA", logo: "/images/clients/pakiza.png" },
+                    { name: "UYLAB", logo: "/images/clients/uylab.png" },
                 ]);
             });
     }, []);
