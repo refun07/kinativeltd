@@ -259,9 +259,12 @@ const Footer: React.FC<{ theme: string }> = ({ theme }) => {
                             </li>
                             <li className="flex items-center gap-4">
                                 <div className="w-10 h-10 rounded-full bg-foreground/5 border border-foreground/10 flex items-center justify-center shrink-0">
-                                    <Linkedin className="w-4 h-4 text-primary" />
+                                    <Phone className="w-4 h-4 text-primary" />
                                 </div>
-                                <a href="tel:+8801921805176" className="text-gray-400 hover:text-white transition-colors text-sm font-light">+880 1921805176</a>
+                                <div className="flex flex-col">
+                                    <a href="tel:+8801921805176" className="text-gray-400 hover:text-white transition-colors text-sm font-light">+880 1921805176</a>
+                                    <a href="tel:+8801343882700" className="text-gray-400 hover:text-white transition-colors text-sm font-light">+880 1343882700</a>
+                                </div>
                             </li>
                         </ul>
                     </div>
